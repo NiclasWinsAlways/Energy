@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP WiFi Setup</title>
+    <link rel="stylesheet" href="wifi_setup.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ESP32 WiFi Configuration</h1>
+        <form action="/setup_wifi" method="POST">
+            <div class="input-group">
+                <label for="ssid">SSID:</label>
+                <input type="text" id="ssid" name="ssid" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Connect</button>
+        </form>
+    </div>
+</body>
+</html>
