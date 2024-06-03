@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ESP IOT DASHBOARD</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+</head>
+<body>
+    <div class="topnav">
+        <h1>Temperature Graph</h1>
+        <div class="buttons">
+            <button onclick="downloadCSV()">Download CSV</button>
+            <button onclick="clearCSV()">Clear CSV</button>
+            <button onclick="clearGraph()">Clear Graph</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="card-grid">
+            <div class="card">
+                <p class="card-title">Temperature</p>
+                <p class="reading"><span id="temperature"></span></p>
+            </div>
+            <div class="card">
+                <canvas id="temperatureGraph"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

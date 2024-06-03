@@ -14,8 +14,8 @@ OneWire oneWire(TEMP_SENSOR_PIN);
 DallasTemperature temperatureSensors(&oneWire);
 
 // Network settings
-const char* wifiSSID = "Idkyet";
-const char* wifiPassword = "euz38zqe";
+const char* wifiSSID = "E308";
+const char* wifiPassword = "98806829";
 
 // Web server setup
 AsyncWebServer webServer(80);
@@ -59,7 +59,6 @@ void processWebSocketMessage(void *arg, uint8_t *data, size_t len) {
     }
   }
 }
-
 // WebSocket events
 void handleWebSocketEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len) {
   switch (type) {

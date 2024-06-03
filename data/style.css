@@ -1,0 +1,79 @@
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Align vertically center */
+    justify-content: center; /* Align horizontally center */
+}
+
+body, .content {
+    width: 100%;
+    max-width: 1200px; /* Maximum width of the content area */
+}
+
+.topnav {
+    width: 100%;
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.buttons button {
+    background-color: #1C6EA4;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures everything in content is centered */
+    justify-content: center;
+    min-height: 80vh; /* Minimum height to take up much of the viewport */
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    width: 100%;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content within each card */
+}
+
+.card-title {
+    margin: 0;
+    font-weight: 600;
+    color: #007BFF;
+}
+
+.reading {
+    font-size: 20px;
+    color: #333;
+}
