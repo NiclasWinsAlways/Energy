@@ -36,7 +36,7 @@ function initTemperatureChart() {
                         unit: 'second'
                     },
                     ticks: {
-                        display: false // Optionally hide x-axis labels
+                        display: true // Display x-axis labels
                     }
                 },
                 y: {
@@ -80,7 +80,7 @@ function handleWebSocketMessage(event) {
         if (line) {
             var data = JSON.parse(line.trim());
             var temperature = parseFloat(data.temp); // Ensure 'temp' correctly maps to your JSON data key
-            var timestamp = new Date(parseInt(data.time)); // Convert 'time' string to integer
+            var timestamp = new Date(data.time); // Convert ISO 8601 'time' string to Date object
 
             temperatureData.push({ x: timestamp, y: temperature });
             updateTemperatureChart();
@@ -106,7 +106,8 @@ function updateTemperatureChart() {
 function downloadCSV() {
     var csv = 'Time,Temperature\n';
     temperatureData.forEach(function(row) {
-        csv += `${row.x.toISOString()},${row.y}\n`;
+        var localTime = new Date(row.x.getTime() - row.x.getTimezoneOffset() * 60000);
+        csv += `${localTime.toISOString()},${row.y}\n`;
     });
     var csvBlob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     var csvUrl = URL.createObjectURL(csvBlob);
@@ -116,6 +117,8 @@ function downloadCSV() {
     hiddenElement.download = 'temperatureData.csv';
     hiddenElement.click();
 }
+
+
 
 // Clear server-side CSV file
 function clearCSV() {

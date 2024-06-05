@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESP WiFi Setup</title>
-    <link rel="stylesheet" href="wifi_setup.css">
+    <link rel="stylesheet" href="setup.css">
+    <script src="setup.js" defer></script>
 </head>
 <body>
     <div class="container">
         <h1>ESP32 WiFi Configuration</h1>
-        <form action="/setup_wifi" method="POST">
+        <form id="wifi-form" action="/setup_wifi" method="POST">
             <div class="input-group">
                 <label for="ssid">SSID:</label>
                 <input type="text" id="ssid" name="ssid" required>
@@ -20,6 +21,7 @@
             </div>
             <button type="submit">Connect</button>
         </form>
+        <div id="response-area"></div> <!-- Response area for displaying server messages -->
     </div>
 </body>
 </html>
